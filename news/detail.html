@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新闻详情 | 量子材料珠港澳国际研究团队</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header><nav class="nav">
+  <a class="logo" href="../index.html">量子材料珠港澳国际研究团队</a>
+  <ul><li><a href="../index.html">首页</a></li><li><a href="../research.html">研究方向</a></li><li><a href="../team.html">团队成员</a></li><li><a href="../facilities.html">实验设施</a></li><li><a href="../publications.html">科研成果</a></li><li><a href="index.html" class="active">新闻动态</a></li><li><a href="../contact.html">联系我们</a></li>
+</ul>
+</nav></header>
+
+<section class="news-detail-section"><div class="wrap" id="news-detail">
+  <p class="news-loading">加载中……</p>
+</div></section>
+
+<footer><p>© 2026 量子材料珠港澳国际研究团队  北京理工大学（珠海）<br>
+地址：广东省珠海市香洲区金凤路6号天佑楼TA212</p></footer>
+<script src="../js/news-data.js"></script>
+<script>
+(function () {
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  var box = document.getElementById("news-detail");
+  var id = new URLSearchParams(location.search).get("id");
+  var item = (window.NEWS_ITEMS || []).find(function (n) { return n.id === id; });
+
+  if (!item) {
+    document.title = "新闻未找到 | 量子材料珠港澳国际研究团队";
+    box.innerHTML =
+      '<div class="crumbs"><a href="../index.html">首页</a> / <a href="index.html">新闻动态</a></div>' +
+      '<h1 class="nd-title">新闻未找到</h1>' +
+      '<p>该新闻不存在或已被移除。</p>' +
+      '<p><a class="read-more" href="index.html">← 返回新闻动态</a></p>';
+    return;
+  }
+
+  document.title = item.title + " | 量子材料珠港澳国际研究团队";
+
+  var html =
+    '<div class="crumbs"><a href="../index.html">首页</a> / <a href="index.html">新闻动态</a> / 正文</div>' +
+    '<h1 class="nd-title">' + esc(item.title) + "</h1>" +
+    '<p class="nd-date"><time>' + esc(item.date) + "</time></p>";
+
+  if (item.image) {
+    html += '<figure class="nd-figure"><img src="../' + esc(item.image) + '" alt="' + esc(item.title) + '"></figure>';
+  }
+
+  html += (item.body && item.body.length ? item.body : [item.lead])
+    .map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
+
+  if (item.link) {
+    html += '<p><a class="read-more" href="' + esc(item.link) + '">' +
+      esc(item.linkText || "相关链接") + " →</a></p>";
+  }
+
+  html += '<p class="nd-back"><a class="read-more" href="index.html">← 返回新闻动态</a></p>';
+  box.innerHTML = html;
+})();
+</script>
+</body>
+</html>

@@ -29,7 +29,6 @@ header{border-bottom:1px solid var(--rule);background:#fff;}
 
 /* ===== 布局：内容窄栏 ===== */
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
-.narrow{max-width:760px;margin:0 auto;padding:0 24px;}
 section{padding:44px 0;}
 .rule{border:none;border-top:1px solid var(--rule);}
 
@@ -71,36 +70,15 @@ p{margin-bottom:14px;}
 .people-table td{padding:7px 4px;border-bottom:1px solid var(--rule);}
 .people-table td:last-child{color:var(--muted);font-size:.87rem;text-align:right;}
 
-/* ===== 教师个人主页 ===== */
-.profile-head{display:flex;gap:36px;align-items:center;padding:32px;margin-top:36px;background:var(--blue-light);border:1px solid #d5e2f0;border-radius:4px;flex-wrap:wrap;}
-.profile-head img{width:180px;height:180px;border-radius:4px;object-fit:cover;border:1px solid var(--rule);}
-.profile-head h1{font-size:1.7rem;margin-bottom:4px;}
-.profile-head .title{color:var(--accent);font-size:.98rem;margin-bottom:12px;}
-.profile-head p{color:#444;font-size:.95rem;max-width:520px;}
-.p-section{padding:26px 0;border-bottom:1px solid var(--rule);}
-.p-section:last-child{border-bottom:none;}
-.p-section h2{font-size:1.15rem;margin-bottom:12px;border-left:4px solid var(--blue);padding-left:10px;color:var(--blue);}
-.p-section ul{padding-left:22px;}
-.p-section li{margin-bottom:7px;font-size:.94rem;}
-.tag{display:inline-block;border:1px solid var(--rule);border-radius:3px;padding:2px 12px;
-  font-size:.85rem;color:#444;margin:0 8px 8px 0;background:var(--soft);}
 .crumbs{font-size:.84rem;color:var(--muted);padding-top:20px;}
 .crumbs a{color:var(--muted);}
 .crumbs a:hover{color:var(--accent);}
-
-/* ===== 联系 ===== */
-.contact-info p{margin-bottom:10px;font-size:.95rem;}
-input,textarea{width:100%;padding:10px 12px;border:1px solid #ccc;border-radius:3px;font-family:inherit;font-size:.93rem;background:#fff;}
-button{background:var(--blue);color:#fff;border:none;padding:11px 30px;border-radius:3px;cursor:pointer;font-size:.93rem;}
-button:hover{background:var(--blue-mid);}
-form{display:grid;gap:12px;}
 
 footer{margin-top:56px;padding:30px 24px 44px;text-align:center;font-size:.83rem;
   background:var(--blue);color:#c3d3ea;}
 
 @media(max-width:640px){
   .nav{flex-direction:column;align-items:flex-start;gap:4px;}
-  .profile-head img{width:130px;height:130px;}
   .nav ul{gap:14px;}
 }
 
@@ -120,7 +98,6 @@ footer{margin-top:56px;padding:30px 24px 44px;text-align:center;font-size:.83rem
 .pub-item:last-of-type{border-bottom:none;}
 .pub-item .thumb{width:220px;flex-shrink:0;}
 .pub-item .thumb img{width:100%;display:block;border:1px solid var(--rule);}
-.pub-item .thumb .cap{font-size:.78rem;color:var(--muted);padding-top:6px;text-align:center;}
 .pub-info h3{font-size:1.05rem;margin-bottom:6px;line-height:1.5;}
 .pub-info .authors{font-size:.92rem;color:#444;margin-bottom:2px;}
 .pub-info .venue{font-size:.9rem;color:var(--muted);margin-bottom:10px;}
@@ -136,11 +113,37 @@ footer{margin-top:56px;padding:30px 24px 44px;text-align:center;font-size:.83rem
   .pub-item .thumb{width:100%;}
 }
 
-/* ===== 研究方向配图 ===== */
-.topic-fig{margin:16px 0 4px;}
-.topic-fig img{width:100%;max-width:560px;display:block;border:1px solid var(--rule);}
-.topic-fig figcaption{font-size:.82rem;color:var(--muted);padding-top:6px;}
-
-/* ===== 语言切换 ===== */
-.nav .lang a{border:1px solid #bbb;border-radius:3px;padding:1px 10px;font-size:.82rem;letter-spacing:1px;}
-.nav .lang a:hover{border-color:var(--accent);}
+/* ===== 新闻动态：蓝色通栏 + 图文卡片 ===== */
+h2.news-banner{font-size:1.35rem;padding:14px 26px;margin-top:0;background:var(--blue);color:#fff;}
+h2.news-banner small{font-family:sans-serif;font-size:.78rem;color:#c3d3ea;letter-spacing:2px;margin-left:12px;font-weight:400;}
+.news-section{padding:44px 0 12px;}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
+.news-card{display:flex;flex-direction:column;}
+.news-card .news-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid var(--rule);margin-bottom:16px;}
+.news-card h3{font-size:1.02rem;line-height:1.6;margin-bottom:10px;}
+.news-card h3 a{color:var(--ink);}
+.news-card h3 a:hover{color:var(--accent);text-decoration:none;}
+.news-card .news-date{margin-bottom:10px;}
+.news-card .news-date time{color:var(--accent);font-family:Georgia,serif;font-size:.85rem;letter-spacing:.5px;}
+.news-card p{font-size:.9rem;color:#444;line-height:1.75;}
+.read-more{display:inline-block;margin-top:auto;padding-top:4px;font-size:.86rem;font-weight:700;color:var(--accent);}
+.read-more:hover{text-decoration:underline;}
+.more-news{margin:22px 0 0;text-align:right;}
+/* ===== 新闻详情页 ===== */
+.news-detail-section{padding:36px 0 12px;}
+.news-loading{color:var(--muted);font-size:.95rem;}
+.nd-title{font-size:1.5rem;line-height:1.5;margin:14px 0 8px;}
+.nd-date{margin-bottom:22px;}
+.nd-date time{color:var(--accent);font-family:Georgia,serif;font-size:.9rem;letter-spacing:.5px;}
+.nd-figure{margin:0 0 22px;}
+.nd-figure img{width:100%;display:block;border:1px solid var(--rule);}
+.nd-figure figcaption{font-size:.84rem;color:var(--muted);padding-top:8px;line-height:1.6;}
+.nd-back{margin-top:30px;}
+.nd-block{margin-top:28px;padding-top:20px;border-top:1px solid var(--rule);}
+.nd-h2{font-size:1.08rem;margin-bottom:12px;color:var(--blue);border-left:4px solid var(--blue);padding-left:10px;}
+.nd-list{padding-left:22px;}
+.nd-list li{margin-bottom:10px;font-size:.88rem;line-height:1.7;overflow-wrap:anywhere;}
+.nd-credit{margin-top:14px;font-size:.88rem;color:var(--muted);}
+@media(max-width:900px){
+  .news-grid{grid-template-columns:1fr;gap:40px;max-width:560px;margin:0 auto;}
+}
