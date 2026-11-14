@@ -42,7 +42,7 @@ window.NEWS_ITEMS = [
     id: "prl-altermagnet-2025",
     date: "2025-12",
     title: "张先鹏老师在 Physical Review Letters 发表论文",
-    image: "papers/2025/PRL_zhang_2025.png",
+    image: "papers/2025/PRL_zhang_2025.jpg",
     lead: "课题组在交错磁体（altermagnet）各向异性磁电阻理论方面取得重要进展，相关成果以“Theory of Anisotropic Magnetoresistance in Altermagnets and Its Applications”为题发表于《物理评论快报》（Physical Review Letters）。",
     link: "https://journals.aps.org/prl/abstract/10.1103/32zc-ggjy",
     linkText: "阅读论文",
