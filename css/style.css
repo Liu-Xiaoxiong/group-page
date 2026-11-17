@@ -21,7 +21,7 @@ a:hover{text-decoration:underline;}
 header{border-bottom:1px solid var(--rule);background:#fff;}
 .nav{max-width:1080px;margin:0 auto;display:flex;align-items:baseline;justify-content:space-between;
   padding:18px 24px;flex-wrap:wrap;gap:8px;}
-.logo{font-family:Georgia,serif;font-size:1.15rem;color:var(--ink);font-weight:700;letter-spacing:.5px;}
+.logo{font-family:Georgia,serif;font-size:1.6rem;color:var(--ink);font-weight:700;letter-spacing:.5px;}
 .logo:hover{text-decoration:none;color:var(--accent);}
 .nav ul{display:flex;list-style:none;gap:22px;flex-wrap:wrap;}
 .nav ul a{color:#444;font-size:.93rem;}
